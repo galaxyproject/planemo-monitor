@@ -1,0 +1,15 @@
+language: python
+python: 2.7
+env:
+  global:
+  - MULLED_NAMESPACE=jmchiltonorg
+  - GITHUB_USER=dockerhub-planemo
+
+before_install:
+- pip install PyGithub
+#- pip install planemo
+- pip install https://github.com/jmchilton/planemo/archive/mulled_register.zip # TODO: galaxy-lib
+
+script:
+- ./monitor.sh
+
