@@ -8,7 +8,7 @@ declare -a REPOSITORIES=(
 : ${PLANEMO_TARGET:="https://github.com/jmchilton/planemo/archive/mulled_register.zip"}
 : ${PLANEMO_OPTIONS:="--verbose"}
 
-if [ -f .venv ]; then
+if [ ! -f .venv ]; then
     virtualenv .venv
     . .venv/bin/activate
     pip install -U pip
