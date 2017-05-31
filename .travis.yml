@@ -9,4 +9,5 @@ env:
 script:
 - git config --global user.email "$GITHUB_USER@galaxyproject.org"
 - git config --global user.name "$GITHUB_USER"
+- git config --local travis.slug
 - bash monitor.sh
