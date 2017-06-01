@@ -29,6 +29,6 @@ for repository in "${REPOSITORIES[@]}"
 do
    repo_dir=`basename "$repository"`
    git clone "$repository" "$repo_dir"
-   planemo $PLANEMO_OPTIONS container_register --recursive "$repo_dir"
+   planemo $PLANEMO_OPTIONS container_register --force_push --recursive "$repo_dir"
    rm -rf "$repo_dir"
 done
