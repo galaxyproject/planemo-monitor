@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.org/jmchilton/mulled-monitor.svg?branch=master)](https://travis-ci.org/jmchilton/mulled-monitor)
+[![Build Status](https://travis-ci.org/galaxyproject/planemo-monitor.svg?branch=master)](https://travis-ci.org/galaxyproject/planemo-monitor)
 
-# Mulled Monitor
+# Planemo Monitor
 
 This repository monitors repositories containing Galaxy and CWL tools and opens requests to
-https://github.com/jmchilton/multireqcontainers to register mulled containers for combinations
+https://github.com/jmchilton/multi-package-containers to register mulled containers for combinations
 of requirements that are not already published or registered. The result of this is that these
 tools will have containers published and available on quay.io.
 
