@@ -12,7 +12,7 @@ declare -a REPOSITORIES=(
     "https://github.com/phac-nml/galaxy_tools"
 )
 
-: ${PLANEMO_TARGET:="https://github.com/galaxyproject/planemo/archive/master.zip"}
+: ${PLANEMO_TARGET:="https://github.com/jmchilton/planemo/archive/mulled_v2.zip"}
 : ${PLANEMO_OPTIONS:="--verbose"}
 
 if [ ! -f .venv ]; then
@@ -29,6 +29,6 @@ for repository in "${REPOSITORIES[@]}"
 do
    repo_dir=`basename "$repository"`
    git clone "$repository" "$repo_dir"
-   planemo $PLANEMO_OPTIONS container_register --force_push --recursive "$repo_dir"
+   planemo $PLANEMO_OPTIONS container_register --force_push --recursive "$repo_dir/tools/freebayes"
    rm -rf "$repo_dir"
 done
