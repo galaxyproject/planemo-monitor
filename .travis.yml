@@ -32,4 +32,4 @@ script:
               "  LogLevel ERROR" >> ~/.ssh/config
 - git config --global user.email "$GITHUB_USER@galaxyproject.org"
 - git config --global user.name "$GITHUB_USER"
-- bash monitor.sh
+#- bash monitor.sh
