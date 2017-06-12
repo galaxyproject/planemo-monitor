@@ -12,21 +12,21 @@ tools will have containers published and available on quay.io.
 Feel free to open a pull request to add your repository to the list in monitor.sh to monitor
 your tools published to Github as well.
 
-## Implmentation
+## Implementation
 
 See .travis.yml for the driving recipe and monitor.sh for the Planemo driving script. monitor.sh
 is meant to be executed as a cron job - it will clone each repository tracked and walk all
 available tools using Planemo. For each tool it will check its requirements and for each combination
 of requirements in such tools and ensure that this combination of requirements is registered in
-https://github.com/jmchilton/multireqcontainers or that there is an open request already. To perform
+https://github.com/jmchilton/multi-package-containers or that there is an open request already. To perform
 this registeration - planemo simply opens a pull request adding a hashed file to that repository -
-once merged the CI associated with multireqcontainers will build and publish that container to
-quay.io.
+once merged the CI associated with multi-package-containers will build and publish that container to
+[quay.io](https://quay.io).
 
 ## Future Enhancements
 
 - This repository repository only deals with tools that require multiple requirements since all
-  single Bioconda requirements should already be available on http://quay.io/biocontainers -
+  single Bioconda requirements should already be available on https://quay.io/organization/biocontainers -
   but we should have a mechanism for capturing single requirements from other best practice channels
   such as conda-forge and publishing those.
 - Metadata about tools requiring these repositories should be stored in the multireqcontainers
