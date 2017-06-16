@@ -12,7 +12,7 @@ declare -a REPOSITORIES=(
     "https://github.com/phac-nml/galaxy_tools"
 )
 
-: ${PLANEMO_TARGET:="https://github.com/jmchilton/planemo/archive/mulled_v2.zip"}
+: ${PLANEMO_TARGET:="planemo==0.42.1"}
 : ${PLANEMO_OPTIONS:="--verbose"}
 
 if [ ! -f .venv ]; then
