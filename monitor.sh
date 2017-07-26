@@ -10,6 +10,7 @@ declare -a REPOSITORIES=(
     "https://github.com/TGAC/earlham-galaxytools"
     "https://github.com/AAFC-MBB/Galaxy"
     "https://github.com/phac-nml/galaxy_tools"
+    "https://github.com/workflow4metabolomics/tools-w4m"
 )
 
 : ${PLANEMO_TARGET:="planemo==0.42.1"}
