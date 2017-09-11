@@ -13,7 +13,7 @@ declare -a REPOSITORIES=(
     "https://github.com/workflow4metabolomics/tools-w4m"
 )
 
-: ${PLANEMO_TARGET:="planemo==0.42.1"}
+: ${PLANEMO_TARGET:="planemo==0.44"}
 : ${PLANEMO_OPTIONS:="--verbose"}
 
 if [ ! -f .venv ]; then
