@@ -12,7 +12,7 @@ declare -a REPOSITORIES=(
     "https://github.com/phac-nml/galaxy_tools"
 )
 
-: ${PLANEMO_TARGET:="planemo==0.44"}
+: ${PLANEMO_TARGET:="planemo==0.47.0"}
 : ${PLANEMO_OPTIONS:="--verbose"}
 
 if [ ! -f .venv ]; then
