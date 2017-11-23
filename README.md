@@ -9,8 +9,8 @@ tools will have containers published and available on quay.io.
 
 ## Adding Your Repository
 
-Feel free to open a pull request to add your repository to the list in monitor.sh to monitor
-your tools published to Github as well.
+Feel free to open a pull request to add your repository to the list in `repositories.list` to monitor
+your tools published tn GitHub as well.
 
 ## Implementation
 
