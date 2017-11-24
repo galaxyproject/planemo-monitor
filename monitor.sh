@@ -1,18 +1,5 @@
 #!/bin/bash
 
-declare -a REPOSITORIES=(
-    "https://github.com/galaxyproject/tools-iuc"
-    "https://github.com/galaxyproject/tools-devteam"
-    "https://github.com/galaxyproteomics/tools-galaxyp"
-    "https://github.com/bgruening/galaxytools"
-    "https://github.com/peterjc/pico_galaxy"
-    "https://github.com/genouest/tools-colibread"
-    "https://github.com/TGAC/earlham-galaxytools"
-    "https://github.com/AAFC-MBB/Galaxy"
-    "https://github.com/phac-nml/galaxy_tools"
-    "https://github.com/workflow4metabolomics/tools-w4m"
-)
-
 : ${PLANEMO_TARGET:="planemo==0.46"}
 : ${PLANEMO_OPTIONS:="--verbose"}
 
@@ -26,7 +13,7 @@ fi
 
 planemo $PLANEMO_OPTIONS conda_init
 
-for repository in "${REPOSITORIES[@]}"
+sort -R repositories.list | while read repository
 do
    repo_dir=`basename "$repository"`
    git clone "$repository" "$repo_dir"
