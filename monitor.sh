@@ -1,6 +1,6 @@
 #!/bin/bash
 
-: ${PLANEMO_TARGET:="planemo==0.46"}
+: ${PLANEMO_TARGET:="planemo==0.48"}
 : ${PLANEMO_OPTIONS:="--verbose"}
 
 if [ ! -f .venv ]; then
