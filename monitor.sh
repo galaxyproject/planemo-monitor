@@ -13,7 +13,7 @@ fi
 
 planemo $PLANEMO_OPTIONS conda_init
 
-sort -R repositories.list | while read repository
+sort -R $1 | while read repository
 do
    repo_dir=`basename "$repository"`
    git clone "$repository" "$repo_dir"
