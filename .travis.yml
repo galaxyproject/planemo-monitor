@@ -3,8 +3,8 @@ language: python
 python: 2.7
 env:
   matrix:
-  - CHUNK=0
-  - CHUNK=1
+  - CHUNK=repositories01.list
+  - CHUNK=repositories02.list
   global:
   - MULLED_NAMESPACE=jmchiltonorg
   - GITHUB_USER=dockerhub-toolshed
