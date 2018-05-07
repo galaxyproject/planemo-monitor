@@ -2,6 +2,8 @@ sudo: false
 language: python
 python: 2.7
 env:
+  - CHUNK=0
+  - CHUNK=1
   global:
   - MULLED_NAMESPACE=jmchiltonorg
   - GITHUB_USER=dockerhub-toolshed
@@ -37,4 +39,4 @@ script:
   fi
 - git config --global user.email "$GITHUB_USER@galaxyproject.org"
 - git config --global user.name "$GITHUB_USER"
-- bash monitor.sh
+- bash monitor.sh $CHUNK
