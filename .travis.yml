@@ -6,6 +6,7 @@ env:
   - CHUNK=repositories01.list
   - CHUNK=repositories02.list
   - CHUNK=repositories03.list
+  - CHUNK=repositories04.list
   global:
   - MULLED_NAMESPACE=jmchiltonorg
   - GITHUB_USER=dockerhub-toolshed
