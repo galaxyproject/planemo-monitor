@@ -8,7 +8,8 @@ if [ ! -f .venv ]; then
     . .venv/bin/activate
     pip install -U pip
     pip install PyGithub
-    pip install "${PLANEMO_TARGET}"
+    git clone --depth=1 --recursive -b fix_registering_single_containers_with_different_suffix https://github.com/mvdbeek/planemo
+    pip install planemo/ && rm -rf planemo/
 fi
 
 planemo $PLANEMO_OPTIONS conda_init
