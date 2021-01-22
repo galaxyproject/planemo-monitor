@@ -1,0 +1,35 @@
+name: Monitor
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 0 * * *"
+env:
+  MULLED_NAMESPACE: jmchiltonorg
+  GITHUB_USER: dockerhub-toolshed
+jobs:
+  monitor:
+    name: Monitor
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        python-version: [3.8]
+        subset:
+         - CHUNK=repositories01.list
+         - CHUNK=repositories02.list
+         - CHUNK=repositories03.list
+         - CHUNK=repositories04.list
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Set github user
+        run: |
+          git config --global user.email "$GITHUB_USER@galaxyproject.org"
+          git config --global user.name "$GITHUB_USER"
+      - name: planemo monitor
+        run: 'bash ./monitor.sh "${{ matrix.subset }}"'
+        env:
+          GITHUB_TOKEN: ${{ secrets.DOCKERHUB_TOOLSHED_WORKFLOWS }}
