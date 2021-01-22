@@ -7,7 +7,8 @@ if [ ! -f .venv ]; then
     . .venv/bin/activate
     pip install -U pip
     pip install PyGithub
-    pip install "$PLANEMO_TARGET"
+    git clone --recursive -b fix_container_register_for_gh_workflow https://github.com/mvdbeek/planemo && pip install planemo/
+    # pip install "$PLANEMO_TARGET"
 fi
 
 planemo conda_init
