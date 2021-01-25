@@ -17,9 +17,9 @@ jobs:
         python-version: [3.8]
         subset:
          - repositories01.list
-         - repositories02.list
-         - repositories03.list
-         - repositories04.list
+         # - repositories02.list
+         # - repositories03.list
+         # - repositories04.list
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v1
@@ -32,4 +32,5 @@ jobs:
       - name: planemo monitor
         run: 'bash ./monitor.sh "${{ matrix.subset }}"'
         env:
-          GITHUB_TOKEN: ${{ secrets.DOCKERHUB_TOOLSHED_WORKFLOWS }}
+          GITHUB_TOKEN: ${{ secrets.MVDBEEK_PAT }}
+          # GITHUB_TOKEN: ${{ secrets.DOCKERHUB_TOOLSHED_WORKFLOWS }}
