@@ -10,7 +10,7 @@ env:
   GITHUB_USER: dockerhub-toolshed
 jobs:
   monitor:
-    name: Monitor
+    name: Run planemo monitor
     runs-on: ubuntu-18.04
     strategy:
       matrix:
