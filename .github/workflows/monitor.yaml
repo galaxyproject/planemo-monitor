@@ -31,8 +31,11 @@ jobs:
           git config --global user.name "$GITHUB_USER"
       - uses: fusion-engineering/setup-git-credentials@v2
         with:
-          credentials: 'https://${{env.GITHUB_USER}}:${{secrets.DOCKERHUB_TOOLSHED_WORKFLOWS}}@github.com/'
+          credentials: 'https://${{env.GITHUB_USER}}:${{secrets.MVDBEEK_PAT}}@github.com/'
+          # credentials: 'https://${{env.GITHUB_USER}}:${{secrets.DOCKERHUB_TOOLSHED_WORKFLOWS}}@github.com/'
       - name: planemo monitor
         run: 'bash ./monitor.sh "${{ matrix.subset }}"'
         env:
-          GITHUB_TOKEN: ${{ secrets.DOCKERHUB_TOOLSHED_WORKFLOWS }}
+          GITHUB_TOKEN: ${{ secrets.MVDBEEK_PAT }}
+          # GITHUB_TOKEN: ${{ secrets.DOCKERHUB_TOOLSHED_WORKFLOWS }}
+
