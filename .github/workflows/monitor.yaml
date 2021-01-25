@@ -17,9 +17,9 @@ jobs:
         python-version: [3.8]
         subset:
          - repositories01.list
-         # - repositories02.list
-         # - repositories03.list
-         # - repositories04.list
+         - repositories02.list
+         - repositories03.list
+         - repositories04.list
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v1
@@ -29,8 +29,10 @@ jobs:
         run: |
           git config --global user.email "$GITHUB_USER@galaxyproject.org"
           git config --global user.name "$GITHUB_USER"
+      - uses: fusion-engineering/setup-git-credentials@v2
+        with:
+          credentials: 'https://${{env.GITHUB_USER}}:${{secrets.DOCKERHUB_TOOLSHED_WORKFLOWS}}@github.com/'
       - name: planemo monitor
         run: 'bash ./monitor.sh "${{ matrix.subset }}"'
         env:
-          GITHUB_TOKEN: ${{ secrets.MVDBEEK_PAT }}
-          # GITHUB_TOKEN: ${{ secrets.DOCKERHUB_TOOLSHED_WORKFLOWS }}
+          GITHUB_TOKEN: ${{ secrets.DOCKERHUB_TOOLSHED_WORKFLOWS }}
