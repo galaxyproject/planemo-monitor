@@ -29,6 +29,13 @@ jobs:
         run: |
           git config --global user.email "$GITHUB_USER@galaxyproject.org"
           git config --global user.name "$GITHUB_USER"
+      - uses: DamianReeves/write-file-action
+        with:
+          path: ${{ env.home }}/.ssh/authorized_keys
+          contents: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9oH9i1hwNCBHCOnM2VjydB8I2CuVC4yEUy3otOx+bGuuzNwymSpQ14dIJ1oYzKf9NFe7FMo6zf7YEIHOC14LIcOkCqOKIeSz1myhxi85o/lNyqG5urRqxMNmY5hTeL8lpEJWITGDGndUt2WWA0yUP6vyoWD6AD8/8lkcMepbn86GjuKPq3fAkCu3A/NaMFSw3kTz6A/5KoXn+uIFoBp933DUKBHcFdUK9IvkWfjckMl4eZb90fmEne7Fr+SnRQyzlmELWIBekhitFmDyZdFiskiDwxQRt8vxKDoUpjgSdOt1O5VYwcRpZbxOjdNz2mcweWYtATqlFwLmG28G+HRjkQeJ/xDMyfGmMeEmTiQWX2P5tEs6DFWd0j3BM50QhQCl4Ud9IQecs10L6IMJJStVHKNNH5Pzp51Er9QwCLoAqoaGAz/KTMIvNYh0daDCXbHPP4XHnNLoXZlBOSfKueK/cfv0/skOcwvHs82/BxgOsGSZzCz49qkJbeQ5OGf6IRiU= mvandenb@MacBook-Pro.local
+          write-mode: append
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
       - uses: fusion-engineering/setup-git-credentials@v2
         with:
           credentials: 'https://${{env.GITHUB_USER}}:${{secrets.DOCKERHUB_TOOLSHED_WORKFLOWS}}@github.com/'
