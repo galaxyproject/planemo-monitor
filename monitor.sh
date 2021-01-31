@@ -3,11 +3,11 @@
 : ${PLANEMO_TARGET:="planemo==0.74.1"}
 
 if [ ! -f .venv ]; then
-    virtualenv .venv
+    python -m venv .venv
     . .venv/bin/activate
     pip install -U pip
     pip install PyGithub
-    git clone --recursive -b fix_container_register_for_gh_workflow https://github.com/mvdbeek/planemo && pip install planemo/
+    git clone --recursive https://github.com/galaxyproject/planemo && pip install planemo/
     # pip install "$PLANEMO_TARGET"
 fi
 
