@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/galaxyproject/planemo-monitor.svg?branch=master)](https://travis-ci.org/galaxyproject/planemo-monitor)
-
 # Planemo Monitor
 
 This repository monitors repositories containing Galaxy and CWL tools and opens requests to
@@ -14,7 +12,7 @@ your tools published tn GitHub as well.
 
 ## Implementation
 
-See .travis.yml for the driving recipe and monitor.sh for the Planemo driving script. monitor.sh
+See [monitor.yaml](https://github.com/galaxyproject/planemo-monitor/blob/master/.github/workflows/monitor.yaml) for the driving recipe and [monitor.sh](https://github.com/galaxyproject/planemo-monitor/blob/master/monitor.sh) for the Planemo driving script. monitor.sh
 is meant to be executed as a cron job - it will clone each repository tracked and walk all
 available tools using Planemo. For each tool it will check its requirements and for each combination
 of requirements in such tools and ensure that this combination of requirements is registered in
