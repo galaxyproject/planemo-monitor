@@ -1,6 +1,6 @@
 # Planemo Monitor
 
-This repository monitors repositories containing Galaxy and CWL tools and opens requests to
+This repository monitors repositories containing [Galaxy](https://galaxyproject.org/) and CWL tools and opens requests to
 https://github.com/BioContainers/multi-package-containers to register mulled containers for combinations
 of requirements that are not already published or registered. The result of this is that these
 tools will have containers published and available on quay.io.
