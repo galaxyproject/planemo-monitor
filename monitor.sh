@@ -20,3 +20,4 @@ do
    planemo container_register --force_push --recursive "$repo_dir"
    rm -rf "$repo_dir"
 done
+
