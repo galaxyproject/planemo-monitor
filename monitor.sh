@@ -1,6 +1,6 @@
 #!/bin/bash
 
-: ${PLANEMO_TARGET:="planemo==0.74.1"}
+: ${PLANEMO_TARGET:="planemo==0.74.19"}
 
 if [ ! -f .venv ]; then
     python -m venv .venv
