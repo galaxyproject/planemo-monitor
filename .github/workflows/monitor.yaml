@@ -7,7 +7,7 @@ on:
     - cron: "0 0 * * *"
 env:
   GITHUB_USER: dockerhub-toolshed
-  PLANEMO_VERSION: planemo=0.75.18
+  PLANEMO_VERSION: planemo==0.75.18
 jobs:
   monitor:
     name: Run planemo monitor
