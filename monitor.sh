@@ -1,16 +1,5 @@
 #!/bin/bash
 
-: ${PLANEMO_TARGET:="planemo==0.74.19"}
-
-if [ ! -f .venv ]; then
-    python -m venv .venv
-    . .venv/bin/activate
-    pip install -U pip
-    pip install PyGithub
-    git clone --recursive https://github.com/galaxyproject/planemo && pip install planemo/
-    # pip install "$PLANEMO_TARGET"
-fi
-
 planemo conda_init
 
 sort -R $1 | while read repository
