@@ -7,7 +7,6 @@ on:
     - cron: "0 0 * * *"
 env:
   GITHUB_USER: dockerhub-toolshed
-  PLANEMO_VERSION: planemo
 jobs:
   monitor:
     name: Run planemo monitor
@@ -26,7 +25,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install planemo
-        run: pip install PyGithub ${{ env.PLANEMO_VERSION }}
+        run: pip install PyGithub planemo
       - name: Set github user
         run: |
           git config --global user.email "$GITHUB_USER@galaxyproject.org"
